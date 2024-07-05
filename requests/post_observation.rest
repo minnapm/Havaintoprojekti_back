@@ -1,0 +1,10 @@
+POST http://localhost:3001/api/observations
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImtheXR0YWphMSIsImlkIjoiNjY4MjliMTdlOWY2MGI4NmI0NmU0MmNiIiwiaWF0IjoxNzIwMTg2MTE0LCJleHAiOjE3MjAxODk3MTR9.qWUwq8SF56kckUvzyVFoYnn0tBdgFxr1Qn1sUEimLXw
+
+{
+    "species": "kiuru",
+    "amount": "1",
+    "place": "Kurala, Turku",
+    "date": "30.6.2024"
+}

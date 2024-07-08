@@ -5,9 +5,12 @@ const observationSchema = new mongoose.Schema({
     amount: String,
     place: String,
     date: String,
+    category: {
+      type: String, 
+      enum: ['Kasvit', 'Sienet', 'Linnut', 'Perhoset']},
     user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User'
     }
 })
 

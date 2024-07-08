@@ -41,6 +41,7 @@ obsRouter.post('/', async (request, response) => {
       amount: body.amount,
       place: body.place,
       date: body.date,
+      category: body.category,
       user: user._id
     })
   

@@ -52,9 +52,9 @@ obsRouter.post('/', async (request, response) => {
     response.status(201).json(savedObs)
 })
 
-obsRouter.delete('/:id', async (request, response) => {
-    await Observation.findByIdAndDelete(request.params.id)
-    response.status(204).end()
+obsRouter.delete('/:id', async (request, response) => { 
+  await Observation.findByIdAndDelete(request.params.id)
+  response.status(204).end()
 })
 
 obsRouter.put('/:id', async (request, response) => {

@@ -18,6 +18,34 @@ obsRouter.get('/', async (request, response) => {
     response.json(observations)
 })
 
+obsRouter.get('/kasvit', async (request, response) => {
+  const observations = await Observation
+    .find({ category: 'Kasvit' })//.exec()
+    .populate('user', { username: 1 })
+  response.json(observations)
+})
+
+obsRouter.get('/sienet', async (request, response) => {
+  const observations = await Observation
+    .find({ category: 'Sienet' })//.exec()
+    .populate('user', { username: 1 })
+  response.json(observations)
+})
+
+obsRouter.get('/linnut', async (request, response) => {
+  const observations = await Observation
+    .find({ category: 'Linnut' })//.exec()
+    .populate('user', { username: 1 })
+  response.json(observations)
+})
+
+obsRouter.get('/perhoset', async (request, response) => {
+  const observations = await Observation
+    .find({ category: 'Perhoset' })//.exec()
+    .populate('user', { username: 1 })
+  response.json(observations)
+})
+
 obsRouter.get('/:id', async (request, response) => {
     const observation = await Observation.findById(request.params.id)
     if (observation) {
@@ -70,7 +98,7 @@ obsRouter.put('/:id', async (request, response) => {
     const updatedObs = await Observation.findByIdAndUpdate(request.params.id, observation, { new: true })
     response.json(updatedObs)
 })
-  
+
 
 module.exports = obsRouter
 

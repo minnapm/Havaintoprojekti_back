@@ -1,3 +1,5 @@
+//tätä ei välttämättä tarvitse enää
+
 const mongoose = require('mongoose')
 
 if (process.argv.length<3) {
@@ -14,7 +16,7 @@ mongoose.connect(mongoUrl)
 
 const observationSchema = new mongoose.Schema({
     species: String,
-    amount: String,
+    amount: Number,
     place: String,
     date: String,
 })

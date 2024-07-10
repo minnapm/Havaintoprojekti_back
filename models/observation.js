@@ -1,13 +1,28 @@
 const mongoose = require('mongoose')
 
 const observationSchema = new mongoose.Schema({
-    species: String,
-    amount: String,
-    place: String,
-    date: String,
+    species: {
+      type: String,
+      required: true
+    },
+    amount: {
+      type: Number,
+      required: true,
+      min: [1, 'Määrä ei voi olla 0.']
+    },
+    place: {
+      type: String,
+      required: true
+    },
+    date: {
+      type: String,
+      required: true
+    },
     category: {
       type: String, 
-      enum: ['Kasvit', 'Sienet', 'Linnut', 'Perhoset']},
+      enum: ['Kasvit', 'Sienet', 'Linnut', 'Perhoset'],
+      required: true
+    },
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User'

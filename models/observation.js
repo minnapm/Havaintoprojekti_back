@@ -23,6 +23,10 @@ const observationSchema = new mongoose.Schema({
       enum: ['Kasvit', 'Sienet', 'Linnut', 'Perhoset'],
       required: true
     },
+    image: {
+      type: String,
+      //contentType: String
+    },
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User'

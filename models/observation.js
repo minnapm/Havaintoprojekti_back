@@ -27,6 +27,9 @@ const observationSchema = new mongoose.Schema({
       type: String,
       //contentType: String
     },
+    details: {
+      type: String,
+    },
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User'

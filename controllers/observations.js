@@ -27,8 +27,8 @@ const storage = multer.diskStorage({
 
 const upload = multer({
   storage: storage,
-  limts: {
-      fileSize: 1024 * 1024 * 5,
+  limits: {
+      fieldSize: 25 * 1024 * 1024,
   },
  /* fileFilter: fileFilter,*/
 });
@@ -103,6 +103,7 @@ obsRouter.post('/', upload.single('image'), async (request, response) => {
       date: body.date,
       category: body.category,
       image: body.image,
+      details: body.details,
       user: user._id
     })
   
